@@ -1,9 +1,9 @@
 import requests
 import json
 
-url="https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY"
-expiry ="24-sep-2020"
-def fetch_oi():
+# Fetch the data from any url with some expiration time 
+
+def fetch_oi(url,expiry):
         r = requests.get(url).json()
         #print(r)
         '''if expiry:
@@ -21,8 +21,11 @@ def fetch_oi():
         
         print(ce_value)
         print(pe_value)
+        
 def main():
-        fetch_oi()
+        url="https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY"
+        expiry ="24-sep-2020"
+        fetch_oi(url,expiry)
 
 if __name__=='__main__':
         main()
